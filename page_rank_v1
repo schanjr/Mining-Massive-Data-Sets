@@ -1,0 +1,67 @@
+import numpy
+from compiler.ast import flatten
+from collections import defaultdict
+
+
+def page_rank(matrix, nodes, beta=0.85, epsilon=None, period=None):
+
+    #input parameters-for testing
+    #matrix=[1./2,1./2,0,1./2,0,0,0,1./2,1]
+    #beta=0.8
+    #nodes=3
+    #epsilon=0.0001
+    
+    t=0
+    #comprehensions
+    
+    teleport_matrix=[]
+    teleport_matrix=[((1-beta)*1.0/nodes) for i in (range(nodes)*nodes)]
+    flatten(matrix)
+    matrix=[(float(i)*beta) for i in matrix]
+    
+    alpha=[(i+j) for i,j in zip(matrix,teleport_matrix)]
+    alpha_array=numpy.matrix(alpha)
+    alpha_array=alpha_array.reshape(nodes,nodes)
+    
+    ######################
+    page_ranks=defaultdict(list)
+    gen=[i for i in range(nodes)]
+    
+    for i in gen:
+        page_ranks[i].append(0.)
+        page_ranks[i].append(1./nodes)
+        
+    t=0
+    
+    
+        
+        
+    def vectorize(page_ranks):
+        vector=[]
+        for i in page_ranks:
+            vector.append(page_ranks[i][-1])
+        c=numpy.matrix(vector).transpose()
+        return c
+    
+    
+    if epsilon is None and period is not None:
+        while t<period:
+            current_page_ranks=alpha_array*vectorize(page_ranks)
+            for i, n in enumerate(current_page_ranks):
+                page_ranks[i].append(float(n))           
+            t+=1
+    elif epsilon is not None and period is None:
+        while float(abs(page_ranks[i][-1]-page_ranks[i][-2]))>epsilon:
+            current_page_ranks=alpha_array*vectorize(page_ranks)
+            for i, n in enumerate(current_page_ranks):
+                page_ranks[i].append(float(n))           
+            t+=1        
+    else:
+        print "Please enter either an Epsilon or Period parameter. Both cannot be empty and both cannot be given!"
+    
+    for i in page_ranks:
+        print "The Page Ranks Are:",i,"   ",page_ranks[i][-1]
+    print "It took %d iterations" % (t)
+
+
+
