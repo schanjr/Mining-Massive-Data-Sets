@@ -1,0 +1,36 @@
+import math
+from collections import Counter
+
+def buildVector(iterable1, iterable2):
+    counter1 = Counter(iterable1)
+    counter2= Counter(iterable2)
+    all_items = set(counter1.keys()).union( set(counter2.keys()) )
+    vector1 = [counter1[k] for k in all_items]
+    vector2 = [counter2[k] for k in all_items]
+    return vector1, vector2
+
+def cosim(v1, v2):
+    dot_product = sum(n1 * n2 for n1,n2 in zip(v1, v2))
+    magnitude1 = math.sqrt (sum(n ** 2 for n in v1))
+    magnitude2 = math.sqrt (sum(n ** 2 for n in v2))
+    return dot_product / (magnitude1 * magnitude2)
+
+def normalization(z1, z2):
+    counter1=0
+    counter2=0
+    for i in z1:
+        if i > 0:
+            counter1+=1
+    for i in z2:
+        if i > 0:
+            counter2+=1
+    avg_z1 = float(sum(z1))/counter1 if len(z1) > 0 else float('nan')
+    avg_z2 = float(sum(z2))/counter2 if len(z2) > 0 else float('nan')
+    normed_z1 = [i - avg_z1 if i > 0 else 0 for i in z1] 
+    normed_z2 = [i - avg_z2 if i > 0 else 0 for i in z2] 
+    return normed_z1, normed_z2 
+
+#v1,v2= buildVector(a, b)
+#print (cosim(v1, v2))
+#print normalization(a, b)
+
