@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Mining-Massive-Data-Sets&apos;" deleteContents="false" description="Delete resource &apos;Mining-Massive-Data-Sets&apos;" element1="/Mining-Massive-Data-Sets" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1415494851356"/>&#x0A;<refactoring comment="Delete resource &apos;Python_Tests&apos;" deleteContents="true" description="Delete resource &apos;Python_Tests&apos;" element1="/Python_Tests" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1415496313627"/>
-</session>
