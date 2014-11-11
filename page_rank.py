@@ -16,9 +16,8 @@ Please refer to http://en.wikipedia.org/wiki/PageRank
 So the Matrix Parameter should be entered like this: [0, 0, 0, 1]
 
 Which really came from this
-
+...... A|B      <-- These are column names
 PR(A)=[0,0]
-
 PR(B)=[0,1]
 
 A six page example can be found here: http://people.revoledu.com/kardi/tutorial/PageRank/Images/Page-Rank-Numerical-Example_clip_image006.gif For every sum of the corresponding row is the page rank of the page.
