@@ -40,8 +40,9 @@ def ed_wrapper(word1,word2):
     print tab.draw()
     
 '''Sample usage
-word1="Hi"
-word2="what the heck is going on here?"
+
+word1="Hi" <----The string that is used as a base for comparison
+word2="what the heck is going on here?"  <----- The list of words or a large string to compare with word1
 print ed_wrapper(word1, word2)
 '''
 
