@@ -24,6 +24,8 @@ def shingling(string_1, string_2, shingle_k=2):
             s_start+=1
             s_end+=1
     list_set_2=list(set(list_2))
+    print "String 1 shingles:",list_set_1
+    print "String 2 shingles:",list_set_2
     for i in list_set_1:
         if i in list_set_2:
             intersection+=1
@@ -33,10 +35,9 @@ def shingling(string_1, string_2, shingle_k=2):
         if i not in list_set_1:
             leftovers+=1
     union=leftovers+intersection
-    return intersection, union
-'''
+    return "Jaccard Similarity:", str(intersection)+"/"+str(union)
 #Sample usage
 string_1='ABRACADABRA'
 string_2='BRICABRAC'
 print shingling(string_1, string_2, 2)
-'''
+
