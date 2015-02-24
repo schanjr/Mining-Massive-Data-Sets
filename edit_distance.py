@@ -39,10 +39,18 @@ def ed_wrapper(word1,word2):
     tab.header(['Word_1', 'Word_2', 'Edit Distance'])
     print tab.draw()
     
-'''Sample usage
-
+#Sample usage
+'''
 word1="Hi" <----The string that is used as a base for comparison
 word2="what the heck is going on here?"  <----- The list of words or a large string to compare with word1
 print ed_wrapper(word1, word2)
 '''
+"he,she,his,hers"
+word1="his"
+word2="hers"
+
+print ed_wrapper(word1, word2)
+
+
+
 
