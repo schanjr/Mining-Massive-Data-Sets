@@ -1,0 +1,43 @@
+import num2eng
+
+class Norms(object):
+    def __init__(self):
+        self.start_pt=[0,0]
+        self.end_pt=[100,40]
+        
+        
+    def L1(self, x,y):
+        st_d=(self.start_pt[0]-x)+(self.start_pt[1]-y)
+        ed_d=(self.end_pt[0]-x)+(self.end_pt[1]-y)
+        if abs(st_d)>ed_d:
+            return "end_pt"
+        else:
+            return "start_pt"
+
+    def L2(self, x,y):
+        st_d=((self.start_pt[0]-x)**2)+((self.start_pt[1]-y)**2)
+        ed_d=((self.end_pt[0]-x)**2)+((self.end_pt[1]-y)**2)
+        if st_d**0.5>ed_d**0.5:
+            return "end_pt"
+        else:
+            return "start_pt"
+
+    def norms_cpr(self, x,y):
+        if self.L1(x,y)==self.L2(x,y):
+            return True
+        else:
+            return False
+
+def stupid_question_3(n,m):
+    from num2eng import num2eng as eng
+    left=long(2*(n**2))
+    right=long(12*(1000000+m))
+    print "Left is:",left, eng(left)
+    print "Right is:",right, eng(right)
+    s=min(int(left),int(right))
+    return "N={0} M={1}  S={2}".format(left,right,s)
+
+
+
+print stupid_question_3(n=50000,m=200000000)
+
