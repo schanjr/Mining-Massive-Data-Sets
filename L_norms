@@ -1,5 +1,3 @@
-import num2eng
-
 class Norms(object):
     def __init__(self):
         self.start_pt=[0,0]
