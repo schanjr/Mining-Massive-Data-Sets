@@ -1,5 +1,3 @@
-import num2eng
-
 class Norms(object):
     def __init__(self):
         self.start_pt=[0,0]
@@ -27,17 +25,4 @@ class Norms(object):
             return True
         else:
             return False
-
-def stupid_question_3(n,m):
-    from num2eng import num2eng as eng
-    left=long(2*(n**2))
-    right=long(12*(1000000+m))
-    print "Left is:",left, eng(left)
-    print "Right is:",right, eng(right)
-    s=min(int(left),int(right))
-    return "N={0} M={1}  S={2}".format(left,right,s)
-
-
-
-print stupid_question_3(n=50000,m=200000000)
 
