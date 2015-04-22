@@ -46,10 +46,11 @@ word2="what the heck is going on here?"  <----- The list of words or a large str
 print ed_wrapper(word1, word2)
 '''
 "he,she,his,hers"
-word1="his"
-word2="hers"
+word1="he"
+word2=['hers','she','his']
 
 print ed_wrapper(word1, word2)
+print ed_wrapper('hers', ['he','she','his','hers'])
 
 
 

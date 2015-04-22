@@ -54,3 +54,8 @@ docs/_build/
 target/
 /.project
 /.pydevproject
+/edit_distance.py
+/.gitignore
+/L_norms
+/L_norms
+/shingling.py

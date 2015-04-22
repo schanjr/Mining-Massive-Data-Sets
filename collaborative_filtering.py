@@ -1,6 +1,7 @@
 import math
 from collections import Counter
 from sklearn.metrics import mean_squared_error
+import numpy as np
 #import sys
 #from compiler.ast import flatten
 
@@ -11,6 +12,7 @@ def buildVector(iterable1, iterable2):
     all_items = set(counter1.keys()).union( set(counter2.keys()) )
     vector1 = [counter1[k] for k in all_items]
     vector2 = [counter2[k] for k in all_items]
+    
     return vector1, vector2
 
 def normalizer(matrix):
@@ -92,6 +94,11 @@ def collab_filtering(x, y, m, sim_threshold=0.05):
     result = (sum(num_list))/(sum(denom_list))
     return result
 
+
+#print collab_filtering(3,3,m,0.001)
+print np.reshape(m, (6,12))
+print "-" * 20
+print np.reshape(normalizer(m), (6,12))
 
 
 
